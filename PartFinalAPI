@@ -1,0 +1,13 @@
+def predict_date(self, date):
+        self.date = date
+        date = pd.to_datetime(self.date)
+
+        # new data = new prognose
+        pred = self.model.predict(pd.DataFrame({'datetime': [date]}))
+
+
+        
+        results = pd.DataFrame({'fare_amount': pred[0][0], 'trip_time': pred1[0][1]})
+        
+        
+        return results
